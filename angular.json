@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-httpTransportState": {
+    "http-response-state": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-httpTransportState",
+            "outputPath": "dist/http-response-state",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-httpTransportState:build:production"
+              "browserTarget": "http-response-state:build:production"
             },
             "development": {
-              "browserTarget": "ng-httpTransportState:build:development"
+              "browserTarget": "http-response-state:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-httpTransportState:build"
+            "browserTarget": "http-response-state:build"
           }
         },
         "test": {
@@ -105,7 +105,38 @@
           }
         }
       }
+    },
+    "ngrx-http-response-state": {
+      "projectType": "library",
+      "root": "projects/ngrx-http-response-state",
+      "sourceRoot": "projects/ngrx-http-response-state/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngrx-http-response-state/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngrx-http-response-state/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngrx-http-response-state/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngrx-http-response-state/src/test.ts",
+            "tsConfig": "projects/ngrx-http-response-state/tsconfig.spec.json",
+            "karmaConfig": "projects/ngrx-http-response-state/karma.conf.js"
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ng-httpTransportState"
+  "defaultProject": "http-response-state"
 }

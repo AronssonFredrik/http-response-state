@@ -11,6 +11,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ngrx-http-response-state": [
+        "dist/ngrx-http-response-state/ngrx-http-response-state",
+        "dist/ngrx-http-response-state"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
