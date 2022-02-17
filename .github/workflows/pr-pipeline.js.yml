@@ -13,13 +13,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install
+    - name: Installing
       run: |
         npm install
-    - name: npm test
+    - name: Running test
       run: |
-        npm test
-    - name: npm lint
+        npm test:headless
+    - name: Running lint
       run: |
         npm run lint
       env:
