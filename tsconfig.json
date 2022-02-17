@@ -12,9 +12,9 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "ngrx-http-response-state": [
-        "dist/ngrx-http-response-state/ngrx-http-response-state",
-        "dist/ngrx-http-response-state"
+      "ng-response-state": [
+        "dist/ng-response-state/ng-response-state",
+        "dist/ng-response-state"
       ]
     },
     "experimentalDecorators": true,
