@@ -18,7 +18,7 @@ jobs:
         npm install
     - name: Running test
       run: |
-        npm test:headless
+        npm run test:headless
     - name: Running lint
       run: |
         npm run lint
