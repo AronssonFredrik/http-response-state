@@ -1,0 +1,26 @@
+name: Node CI
+on: [pull_request]
+jobs:
+  Tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [14.x]
+        os: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Installing
+      run: |
+        npm install
+    - name: Running test
+      run: |
+        npm run test:headless
+    - name: Running lint
+      run: |
+        npm run lint
+      env:
+        CI: true
