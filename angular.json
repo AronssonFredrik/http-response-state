@@ -103,6 +103,15 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -134,9 +143,21 @@
             "tsConfig": "projects/ng-response-state/tsconfig.spec.json",
             "karmaConfig": "projects/ng-response-state/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-response-state/**/*.ts",
+              "projects/ng-response-state/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "service-response-state"
+  "defaultProject": "service-response-state",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
