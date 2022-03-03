@@ -16,9 +16,10 @@ jobs:
     - name: Installing
       run: |
         npm install
-    - name: Running test
+    - name: Running unit tests
       run: |
-        npm run test:headless
+        npm run test:headles
+        npm run test-package:headless
     - name: Running lint
       run: |
         npm run lint
