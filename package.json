@@ -11,9 +11,9 @@
     "test:headless": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "test-package": "ng test ng-response-state",
     "test-package:headless": "ng test ng-response-state --browsers=ChromeHeadless --watch=false --code-coverage",
-    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
-    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+    "bump:major": "standard-version --release-as=major",
+    "bump:minor": "standard-version --release-as=minor",
+    "bump:patch": "standard-version --release-as=patch"
   },
   "private": true,
   "dependencies": {
@@ -40,7 +40,6 @@
     "@angular/compiler-cli": "~13.2.2",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
-    "generate-changelog": "^1.8.0",
     "@typescript-eslint/eslint-plugin": "5.11.0",
     "@typescript-eslint/parser": "5.11.0",
     "eslint": "^8.2.0",
@@ -51,6 +50,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.2.1",
+    "standard-version": "^9.3.2",
     "typescript": "~4.5.5"
   }
 }
