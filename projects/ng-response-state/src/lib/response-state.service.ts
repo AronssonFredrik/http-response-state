@@ -37,7 +37,7 @@ export class ResponseStateService {
 
   // Handlers for setting response types
 
-  private setResponseType(type: ResponseStateType): void {
+  public setResponseType(type: ResponseStateType): void {
     this.responseStateTypeSource.next(type);
   }
 
