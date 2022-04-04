@@ -16,6 +16,9 @@ jobs:
     - name: Installing
       run: |
         npm install
+    - name: Building package
+      run: |
+        npm run build-package
     - name: Running unit tests
       run: |
         npm run test:headless
@@ -23,5 +26,8 @@ jobs:
     - name: Running lint
       run: |
         npm run lint
+    - name: Building application
+      run: |
+        npm run build
       env:
         CI: true

@@ -1,4 +1,4 @@
-export const enum ResponseStateType {
+export enum ResponseStateType {
     none = 'NONE',
     loading = 'LOADING',
     success = 'SUCCESS',
