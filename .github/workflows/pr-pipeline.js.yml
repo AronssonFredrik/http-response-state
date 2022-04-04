@@ -16,6 +16,9 @@ jobs:
     - name: Installing
       run: |
         npm install
+    - name: Building
+      run: |
+        npm run build
     - name: Running unit tests
       run: |
         npm run test:headless
