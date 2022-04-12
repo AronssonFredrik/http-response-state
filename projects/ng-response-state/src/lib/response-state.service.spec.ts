@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ResponseState, ResponseStateType } from './response-state.interface';
+import { ResponseState } from './response-state.interface';
 
 import { ResponseStateService } from './response-state.service';
 
@@ -15,36 +15,24 @@ describe('NgResponseStateService', () => {
 
   it('should be created', () => expect(service).toBeTruthy());
 
-  it('should set state to none', () => expect(responseState.state).toBe(ResponseStateType.none));
-  it('should NOT be loading', () => expect(responseState.isLoading).toBe(false));
-  it('should NOT be error', () => expect(responseState.isError).toBe(false));
-  it('should NOT be successfull', () => expect(responseState.isSuccess).toBe(false));
+  it('should set state to none', () => expect(responseState).toBe(ResponseState.none));
 
   describe("Response is loading", () => {
     beforeEach(() => service.setLoading());
 
-    it('should set state to loading', () => expect(responseState.state).toBe(ResponseStateType.loading));
-    it('should be loading', () => expect(responseState.isLoading).toBe(true));
-    it('should NOT be error', () => expect(responseState.isError).toBe(false));
-    it('should NOT be successfull', () => expect(responseState.isSuccess).toBe(false));
+    it('should set state to loading', () => expect(responseState).toBe(ResponseState.loading));
   });
 
   describe("Response is succesfull", () => {
     beforeEach(() => service.setSuccess());
 
-    it('should set state to successfull', () => expect(responseState.state).toBe(ResponseStateType.success));
-    it('should be loading', () => expect(responseState.isLoading).toBe(false));
-    it('should NOT be error', () => expect(responseState.isError).toBe(false));
-    it('should NOT be successfull', () => expect(responseState.isSuccess).toBe(true));
+    it('should set state to successfull', () => expect(responseState).toBe(ResponseState.success));
   });
 
   describe("Response is error", () => {
     beforeEach(() => service.setError());
 
-    it('should set state to loading', () => expect(responseState.state).toBe(ResponseStateType.error));
-    it('should be loading', () => expect(responseState.isLoading).toBe(false));
-    it('should NOT be error', () => expect(responseState.isError).toBe(true));
-    it('should NOT be successfull', () => expect(responseState.isSuccess).toBe(false));
+    it('should set state to loading', () => expect(responseState).toBe(ResponseState.error));
   });
 
 });

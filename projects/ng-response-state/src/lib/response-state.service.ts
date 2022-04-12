@@ -1,75 +1,58 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { ResponseState, ResponseStateType } from './response-state.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { ResponseState } from './response-state.interface';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResponseStateService {
-  private readonly responseStateTypeSource: BehaviorSubject<ResponseStateType> = new BehaviorSubject<ResponseStateType>(ResponseStateType.none);
+  private readonly responseStateTypeSource: BehaviorSubject<ResponseState> = new BehaviorSubject<ResponseState>(ResponseState.none);
   
-  public readonly responseStateType$: Observable<ResponseStateType> = this.responseStateTypeSource.asObservable();
+  public readonly responseState$: Observable<ResponseState> = this.responseStateTypeSource.asObservable();
   public readonly isLoading$: Observable<boolean> = this.isLoading();
   public readonly isError$: Observable<boolean> = this.isError();
   public readonly isSuccess$: Observable<boolean> = this.isSuccess();
 
-  public readonly responseState$: Observable<ResponseState> = combineLatest([
-      this.responseStateType$,
-      this.isLoading$,
-      this.isError$,
-      this.isSuccess$,
-    ]).pipe(map(([
-      state,
-      isLoading,
-      isError,
-      isSuccess
-    ]) => {
-      return {
-        state,
-        isLoading,
-        isError,
-        isSuccess 
-      }
-    })
-  );
-
+  public get responseStateTypes(): typeof ResponseState {
+    return ResponseState;
+  }
 
   // Handlers for setting response types
 
-  public setResponseType(type: ResponseStateType): void {
+  public setResponseType(type: ResponseState): void {
     this.responseStateTypeSource.next(type);
   }
 
   public setLoading(): void {
-    this.setResponseType(ResponseStateType.loading);
+    this.setResponseType(ResponseState.loading);
   }
 
   public setError(): void {
-    this.setResponseType(ResponseStateType.error);
+    this.setResponseType(ResponseState.error);
   }
 
   public setSuccess(): void {
-    this.setResponseType(ResponseStateType.success);
+    this.setResponseType(ResponseState.success);
   }
 
   // Handlers for checking response types
-  private isResponseType(type: ResponseStateType): Observable<boolean> {
+  private isResponseType(type: ResponseState): Observable<boolean> {
     return this.responseStateTypeSource.pipe(
-      map((responseStateType: ResponseStateType) => responseStateType === type)
+      map((responseStateType: ResponseState) => responseStateType === type)
     );
   }
 
   public isLoading(): Observable<boolean> {
-    return this.isResponseType(ResponseStateType.loading);
+    return this.isResponseType(ResponseState.loading);
   }
 
   public isError(): Observable<boolean> {
-    return this.isResponseType(ResponseStateType.error);
+    return this.isResponseType(ResponseState.error);
   }
 
   public isSuccess(): Observable<boolean> {
-    return this.isResponseType(ResponseStateType.success);
+    return this.isResponseType(ResponseState.success);
   }
 
 }
