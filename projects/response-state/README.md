@@ -13,7 +13,8 @@ npm install response-state
 ### Usage
 
 #### Service
-Begin by extending it to service. When using 
+Begin by extending it to service. Inside the http-request, handle the state as following:
+
 ```TypeScript
 import { HttpClient } from '@angular/common/http';
 import { ResponseStateService } from 'response-state';
@@ -47,6 +48,8 @@ export class YourService extends ResponseStateService {
 ```
 
 #### Component (*.component.ts)
+Initiate the request from your component and observe on the response state observable as below.
+
 ```TypeScript
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ResponseState } from 'response-state';
@@ -70,6 +73,8 @@ export class AppComponent {
 ```
 
 #### Template (*.component.html)
+Observe on the state asynchronously and handle loading, success and error cases as needed.
+
 ```HTML
 <main *ngIf="(state$ | async) as state">
   <your-loading-component *ngIf="state === responseStateTypes.loading"></your-loading-component>
