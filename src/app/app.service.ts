@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ResponseStateService } from 'ng-response-state';
+import { ResponseStateService } from 'response-state';
 import { timer } from 'rxjs';
 
 

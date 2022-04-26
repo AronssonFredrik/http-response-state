@@ -9,7 +9,7 @@
             "type": "json"
         },
         {
-            "filename": "projects/ng-response-state/package.json",
+            "filename": "projects/response-state/package.json",
             "type": "json"
         }
     ]

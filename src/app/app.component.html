@@ -1,22 +1,22 @@
 <main *ngIf="(state$ | async) as state">
   <h3>Service Response State</h3>
 
-  <p>State set to: {{state.state}}</p>
+  <p>State set to: {{state}}</p>
 
   <section class="container">
     <button 
-      [disabled]="state.state === responseState.loading"
-      (click)="handleSetState(responseState.loading)">
+      [disabled]="state === responseStateTypes.loading"
+      (click)="handleSetState(responseStateTypes.loading)">
       Set to loading
     </button>
     <button 
-      [disabled]="state.state === responseState.success"
-      (click)="handleSetState(responseState.success)">
+      [disabled]="state === responseStateTypes.success"
+      (click)="handleSetState(responseStateTypes.success)">
       Set to finish
     </button>
     <button 
-      [disabled]="state.state === responseState.error"
-      (click)="handleSetState(responseState.error)">
+      [disabled]="state === responseStateTypes.error"
+      (click)="handleSetState(responseStateTypes.error)">
       Set to error
     </button>
     <button (click)="fetchMock()">Mock fetch</button>
