@@ -7,5 +7,24 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "author": "Fredrik Aronsson",
+  "license": "ISC",
+  "homepage": "https://github.com/AronssonFredrik/service-response-state#readme",
+  "bugs": {
+    "url": "https://github.com/AronssonFredrik/service-response-state/issues"
+  },
+  "keywords": [
+    "response state",
+    "http call",
+    "angular",
+    "rxjs",
+    "observable",
+    "async",
+    "loading",
+    "loader",
+    "error",
+    "successfull",
+    "callback"
+  ]
 }
