@@ -1,20 +1,22 @@
 {
   "name": "service-response-state",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "lint": "ng lint",
     "build": "ng build",
-    "build-package": "ng build response-state",
+    "build:package": "ng build response-state",
+    "clean": "rm -rf ./dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:headless": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "test-package": "ng test response-state",
-    "test-package:headless": "ng test response-state --browsers=ChromeHeadless --watch=false --code-coverage",
+    "test:package": "ng test response-state",
+    "test:package:headless": "ng test response-state --browsers=ChromeHeadless --watch=false --code-coverage",
     "bump:major": "standard-version --release-as=major",
     "bump:minor": "standard-version --release-as=minor",
-    "bump:patch": "standard-version --release-as=patch"
+    "bump:patch": "standard-version --release-as=patch",
+    "deploy": "npm run clean && npm run build:package && npm publish"
   },
   "private": true,
   "dependencies": {
