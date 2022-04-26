@@ -1,5 +1,5 @@
 # Response State
-`ng-response-state` is a HTTP response state indicator handling the life-cycle of the service call from loading, successfull to catched error or if it has been initiated. `ng-response-state` was created in mind of handling day-to-day operations of http-services for any Angular RxJS project.
+`response-state` is a HTTP response state indicator handling the life-cycle of the service call from loading, successfull to catched error or if it has been initiated. `response-state` was created in mind of handling day-to-day operations of http-services for any Angular RxJS project.
 
 
 ## Usage
@@ -16,7 +16,7 @@ npm install response-state
 Begin by extending it to service. When using 
 ```TypeScript
 import { HttpClient } from '@angular/common/http';
-import { ResponseStateService } from 'ng-response-state';
+import { ResponseStateService } from 'response-state';
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +49,7 @@ export class YourService extends ResponseStateService {
 #### Component (*.component.ts)
 ```TypeScript
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ResponseState } from 'ng-response-state';
+import { ResponseState } from 'response-state';
 import { Observable } from 'rxjs';
 import { YourService } from './your.service';
 

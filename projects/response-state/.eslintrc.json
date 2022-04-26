@@ -10,8 +10,8 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/ng-response-state/tsconfig.lib.json",
-          "projects/ng-response-state/tsconfig.spec.json"
+          "projects/response-state/tsconfig.lib.json",
+          "projects/response-state/tsconfig.spec.json"
         ],
         "createDefaultProgram": true
       },

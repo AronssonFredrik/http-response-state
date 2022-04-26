@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ResponseState } from 'ng-response-state';
+import { ResponseState } from 'response-state';
 import { Observable } from 'rxjs';
 import { AppService } from './app.service';
 

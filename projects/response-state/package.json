@@ -1,5 +1,5 @@
 {
-  "name": "ng-response-state",
+  "name": "response-state",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.0.0",
