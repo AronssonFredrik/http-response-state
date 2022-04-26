@@ -18,11 +18,11 @@ jobs:
         npm install
     - name: Building package
       run: |
-        npm run build-package
+        npm run build:package
     - name: Running unit tests
       run: |
         npm run test:headless
-        npm run test-package:headless
+        npm run test:package:headless
     - name: Running lint
       run: |
         npm run lint

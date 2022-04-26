@@ -16,9 +16,8 @@
     "bump:major": "standard-version --release-as=major",
     "bump:minor": "standard-version --release-as=minor",
     "bump:patch": "standard-version --release-as=patch",
-    "deploy": "npm run clean && npm run build:package && npm publish"
+    "deploy": "npm run clean && npm run build:package && npm publish ./dist/response-state"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.2",
     "@angular/common": "~13.2.2",
