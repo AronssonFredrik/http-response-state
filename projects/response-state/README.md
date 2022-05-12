@@ -115,3 +115,9 @@ Observe on the state asynchronously and handle loading, success and error cases 
 | Loading | Used to check/set state to loading                                                  |
 | Success | Used to check/set state to success                                                  |
 | Error   | Used to check/set state to error                                                    |
+
+## Support
+The following table provides the status for `response-state` versions under support. As a general rule, the latest version of Angular will be maintained for `response-state` and supported. We strive to keep up-to-date with latest version as soon as available.
+
+|| Package version || Angular version ||  Status ||
+| ^1.0.0 | ^13.0.0 | Active |
